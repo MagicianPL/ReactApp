@@ -1,9 +1,7 @@
 import "./ExpenseItem.css";
-import Calendar from "./Calendar"
+import Calendar from "./Calendar";
 
 const ExpenseItem = (props) => {
-  
-
   return (
     <div className="expense-item">
       <Calendar date={props.date} />
