@@ -1,5 +1,6 @@
 import "./App.css";
 import WrapperExpenses from "./components/WrapperExpenses";
+import NewExpense from './components/NewExpense'
 
 function App() {
   const expenses = [
@@ -27,7 +28,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Hello</h1>
+      <NewExpense />
       <WrapperExpenses arr = {expenses} />
     </div>
   );
