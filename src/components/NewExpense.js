@@ -3,12 +3,13 @@ import ExpenseForm from "./ExpenseForm";
 
 import "./NewExpense.css";
 
-const NewExpense = () => {
+const NewExpense = (props) => {
   const dataFromForm = (oldObjct) => {
     const dataObject = {
       ...oldObjct,
     };
     console.log(dataObject);
+    props.onAddObj(dataObject);
   };
   return (
     <div className="new-expense">

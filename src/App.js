@@ -26,9 +26,14 @@ function App() {
     },
   ];
 
+  const addNewObjectFromChild = object => {
+    console.log("from app")
+    console.log(object)
+  }
+
   return (
     <div className="App">
-      <NewExpense />
+      <NewExpense onAddObj={addNewObjectFromChild} />
       <WrapperExpenses arr = {expenses} />
     </div>
   );
