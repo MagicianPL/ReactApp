@@ -1,11 +1,21 @@
+import React, { useState } from "react";
 import ExpenseItem from "./ExpenseItem";
 import "./WrapperExpenses.css";
+import ExpensesFilter from "./ExpensesFilter";
 
 const WrapperExpenses = ({ arr: expenses }) => {
   //In props is object with arr attribute - arr: array
   //I'm destructuring this object n changes name on expenses
+
+  const [selectedValue, setSelectedValue] = useState("");
+
+  const selectedValueHandler = (e) => {
+    console.log(e.target.value);
+    setSelectedValue(e.target.value);
+  };
   return (
     <div className="wrapper-expenses">
+      <ExpensesFilter dropdown={selectedValueHandler} />
       <ExpenseItem
         date={expenses[0].date}
         title={expenses[0].title}
