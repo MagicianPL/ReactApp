@@ -24,6 +24,11 @@ const expenses = [
     amount: 3200,
     date: new Date(2021, 7, 6),
   },
+  {
+    title: "Bueno Sajres Panie!",
+    amount: 15000,
+    date: new Date(2020, 4, 4),
+  },
 ];
 
 function App() {
