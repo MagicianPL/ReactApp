@@ -8,7 +8,6 @@ const NewExpense = (props) => {
     const dataObject = {
       ...oldObjct,
     };
-    console.log(dataObject);
     props.onAddObj(dataObject);
   };
   return (
