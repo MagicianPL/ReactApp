@@ -17,10 +17,16 @@ const WrapperExpenses = ({ arr: expenses }) => {
     <div className="wrapper-expenses">
       <ExpensesFilter selectedYear={selectedYearHandler} />
 
-      {expenses.map(obj => {
-        return <ExpenseItem date={obj.date} title={obj.title} amount={obj.amount} />
+      {expenses.map((obj) => {
+        return (
+          <ExpenseItem
+            key={obj.title}
+            date={obj.date}
+            title={obj.title}
+            amount={obj.amount}
+          />
+        );
       })}
-      
     </div>
   );
 };
