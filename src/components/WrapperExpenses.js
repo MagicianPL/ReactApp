@@ -7,15 +7,15 @@ const WrapperExpenses = ({ arr: expenses }) => {
   //In props is object with arr attribute - arr: array
   //I'm destructuring this object n changes name on expenses
 
-  const [selectedValue, setSelectedValue] = useState("");
+  const [selectedYear, setSelectedYear] = useState("");
 
-  const selectedValueHandler = (e) => {
+  const selectedYearHandler = (e) => {
     console.log(e.target.value);
-    setSelectedValue(e.target.value);
+    setSelectedYear(e.target.value);
   };
   return (
     <div className="wrapper-expenses">
-      <ExpensesFilter dropdown={selectedValueHandler} />
+      <ExpensesFilter selectedYear={selectedYearHandler} />
       <ExpenseItem
         date={expenses[0].date}
         title={expenses[0].title}
