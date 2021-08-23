@@ -10,6 +10,7 @@ const NewExpense = (props) => {
     };
     props.onAddObj(dataObject);
   };
+
   return (
     <div className="new-expense">
       <ExpenseForm onSaveData={dataFromForm} />

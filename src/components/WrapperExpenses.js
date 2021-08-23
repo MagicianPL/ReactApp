@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import ExpenseItem from "./ExpenseItem";
 import "./WrapperExpenses.css";
 import ExpensesFilter from "./ExpensesFilter";
+import ComponentList from "./ComponentList"
 
 const WrapperExpenses = ({ arr: expenses }) => {
   //In props is object with arr attribute - arr: array
@@ -21,25 +21,10 @@ const WrapperExpenses = ({ arr: expenses }) => {
   });
   //new array with expenses, with selected year
 
-  let expensesContent = <p>Brak wprowadzonych danych na ten rok</p>;
-
-  if (filtered.length > 0) {
-    expensesContent = filtered.map((obj) => {
-      return (
-        <ExpenseItem
-          key={obj.title}
-          date={obj.date}
-          title={obj.title}
-          amount={obj.amount}
-        />
-      );
-    });
-  }
-
   return (
     <div className="wrapper-expenses">
       <ExpensesFilter selectedYear={selectedYearHandler} />
-      {expensesContent}
+      <ComponentList array={filtered} />
     </div>
   );
 };

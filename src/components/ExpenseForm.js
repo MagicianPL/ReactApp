@@ -28,10 +28,20 @@ const ExpenseForm = (props) => {
     };
 
     props.onSaveData(userData);
+    setContentHandler();
     setTitle("");
     setAmount("");
     setDate("");
   };
+
+  const [content, setContent] = useState(false);
+  const setContentHandler = () => {
+    content === false ? setContent(true) : setContent(false);
+  };
+
+  if (content === false) {
+    return <button onClick={setContentHandler}>Dodaj nowy wydatek</button>;
+  }
 
   return (
     <form onSubmit={submitHandler}>
@@ -67,7 +77,8 @@ const ExpenseForm = (props) => {
         </div>
       </div>
       <div className="new-expense__actions">
-        <button type="submit">Dodaj</button>
+        <button onClick={setContentHandler}>Anuluj</button>
+        <button type="submit"> Dodaj</button>
       </div>
     </form>
   );
